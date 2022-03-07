@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirby Love 🐕</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div>
+<img src="kirby.jpg" alt="">
+<h2 id="demo"></h2>
+</div>
+<script>
+var deadline = new Date("March 12, 2022 12:00:00").getTime();
+var x = setInterval(function() {
+var now = new Date().getTime();
+var t = deadline - now;
+var days = Math.floor(t / (1000 * 60 * 60 * 24));
+var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((t % (1000 * 60)) / 1000);
+document.getElementById("demo").innerHTML = days + "j " 
++ hours + "h " + minutes + "m " + seconds + "s ";
+    if (t < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "BIENVENUE À KIRBY";
+    }
+}, 1000);
+</script>
+  
+</body>
+</html>
